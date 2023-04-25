@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>HTML A-Frame</title>
+        <link rel="stylesheet" type="text/css" href="./styles/main.css">
+        <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+        <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+    </head>
+    <body>
+		<header>
+			<nav></nav>
+		</header>
+        <a-scene>
+            <a-assets>
+                <img id="bgImg" src="assets/sechelt.jpg">
+                <audio id="bgSound" src="assets/backgroundnoise.wav"></audio>
+                <a-asset-item id="vin" src="assets/Vinayagar.glb"></a-asset-item>
+                <a-asset-item id="house" src="assets/house.glb"></a-asset-item>
+                <a-asset-item id="shop" src="assets/botcher%20shop.glb"></a-asset-item>
+            </a-assets>
+            
+            <a-entity environment="preset: forest; dressing: trees; dressingAmount: 100; ground: brown;"></a-entity>
+            
+            <a-scene inspector="url: https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js">
+            </a-scene>
+            
+            <a-entity gltf-model="#vin" rotation="0 0 0" position="5 0 5" scale="0.5 0.5 0.5" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000;" animation__pos="property: position; to: 25 0 2; loop: true; dur: 10000; dir: alternate;"></a-entity>
+            <a-entity gltf-model="#vin" rotation="0 0 0" position="0 0 7" scale="0.5 0.5 0.5" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000;" animation__pos="property: position; to: 10 0 10; loop: true; dur: 10000; dir: alternate;"></a-entity>
+            <a-entity gltf-model="#vin" rotation="0 0 0" position="3 0 10" scale="0.5 0.5 0.5" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000;" animation__pos="property: position; to: 20 0 7; loop: true; dur: 10000; dir: alternate;"></a-entity>
+            <a-entity gltf-model="#vin" rotation="0 0 0" position="3 0 2" scale="0.5 0.5 0.5" ></a-entity>
+            <a-entity gltf-model="#house" rotation="0 0 0" position="0 0 0" scale="1 1 1" ></a-entity>
+            <a-entity gltf-model="#house" rotation="0 -180 0" position="0 0 15" scale="1 1 1" ></a-entity>
+            <a-entity gltf-model="#house" rotation="0 180 0" position="-5 0 15" scale="1 1 1" ></a-entity>
+            <a-entity gltf-model="#shop" rotation="0 180 0" position="5 0 5" scale="1 1 1" ></a-entity>
+            <a-sound src="#bgSound" autoplay></a-sound>
+            <!--<a-sky src="#bgImg"></a-sky>-->
+            <a-entity ground="groundColor: #445"></a-entity>
+            <a-light type="ambient" color="yellow" intensity="0.5"></a-light>
+            <a-light position="0 1 0" rotation="-90 0 0" type="directional" color="white" intensity="1"></a-light>
+            <a-plane height="100" width="100" rotation="-90 0 0" color="green"></a-plane>
+            <a-text value="Weird Village!" position="0 3 4"></a-text>
+        </a-scene>
+        <main></main>
+		<footer></footer>
+    </body>
+</html>
